@@ -130,7 +130,7 @@
       <div class="panel ctrl">
         <ul style="margin-top:0">
           <li><strong>Knobs</strong> are turned by dragging up/down or left/right.</li>
-          <li><strong>Double-click</strong> a knob to return it to its default value.</li>
+          <li><strong>Double-click</strong> a knob to return it to its default value. <a href="#ctl-decay">Decay</a> returns to the native reverb time of the loaded preset.</li>
           <li>All controls are automatable and stored with your DAW project. Concert7 has no user presets of its own (yet) – use your DAW's preset function.</li>
         </ul>
       </div>
@@ -180,6 +180,7 @@
           <dl class="meta"><div><dt>Range</dt><dd>0.2 – 30 s</dd></div><div><dt>Default</dt><dd>native RT60 of the preset</dd></div></dl></div>
         <p>The reverb time (RT60): how long it takes the late reverb to fall by 60 dB. Concert7 reshapes the recorded tail to the new slope – shorter values make it fall faster, longer values extend it beyond the end of the recording with a synthesised tail that keeps the preset's spectrum.</p>
         <p>The decay is the reference for the <a href="#decay-page">multi-band decay</a> multipliers. Presets with an abrupt, gated envelope keep their cut-off when lengthened and get a longer tail after it.</p>
+        <p class="tip">Double-click the knob to go back to the preset's native reverb time.</p>
       </div>
 
       <div class="panel ctrl" id="ctl-early">
