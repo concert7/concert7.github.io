@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Concert7 Documentation – all controls explained</title>
-  <meta name="description" content="What every control of the Concert7 reverb does: presets, decay, early and late levels, roll-offs, delay, multi-band decay, post EQ, modulation, ducker and setup.">
+  <meta name="description" content="What every control of the Concert7 reverb does: presets, decay, early and late levels, roll-offs, delay, multi-band decay, post EQ, modulation, smooth, ducker and setup.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Doto:wght@700;900&display=swap" rel="stylesheet">
@@ -99,8 +99,8 @@
         <ol><li><a href="#early-reflections">Early reflections</a></li><li><a href="#late-reverb">Late reverb</a></li><li><a href="#delay">Delay</a></li><li><a href="#routing">Pre-delay / routing</a></li></ol></li>
       <li><a href="#decay-page">Decay page</a></li>
       <li><a href="#eq">EQ page</a></li>
-      <li><a href="#mod-duck">Mod / Duck page</a>
-        <ol><li><a href="#modulation">Modulation</a></li><li><a href="#ducker">Ducker</a></li></ol></li>
+      <li><a href="#extras">Extras page</a>
+        <ol><li><a href="#modulation">Modulation</a></li><li><a href="#ducker">Ducker</a></li><li><a href="#smooth">Smooth</a></li></ol></li>
       <li><a href="#setup">Setup menu</a></li>
     </ol>
   </nav>
@@ -367,16 +367,17 @@
     </section>
 
     <!-- ================================================================ -->
-    <section id="mod-duck">
-      <h2>Mod / Duck page</h2>
-      <p>Movement and dynamics for the reverb signal.</p>
+    <section id="extras">
+      <span id="mod-duck"></span>
+      <h2>Extras page</h2>
+      <p>Movement and dynamics for the reverb signal, and a control that evens out the character of the tail.</p>
 
       <h3 class="group" id="modulation">Modulation</h3>
 
       <div class="panel ctrl">
         <div class="ctrl-head"><h4>Depth</h4>
           <dl class="meta"><div><dt>Range</dt><dd>0 – 100 %</dd></div><div><dt>Default</dt><dd>0 % (off)</dd></div></dl></div>
-        <p>Amount of a slow pitch modulation (vibrato) on the reverb. Left and right are modulated with a 90° offset, which adds width and movement and smooths out metallic ringing in sustained tails. Because there is no dry path inside the modulator, it does not cause comb filtering. Keep it low for natural spaces.</p>
+        <p>Amount of a slow pitch modulation (vibrato) on the reverb. Left and right are modulated with a 90° offset, which adds width and movement and smooths out metallic ringing in sustained tails. Because there is no dry path inside the modulator, it does not cause comb filtering. Keep it low for natural spaces – to remove ringing without any pitch movement, use <a href="#smooth">Smooth</a>.</p>
       </div>
 
       <div class="panel ctrl">
@@ -410,6 +411,15 @@
         <div class="ctrl-head"><h4>Sidechain</h4>
           <dl class="meta"><div><dt>Default</dt><dd>Off</dd></div></dl></div>
         <p>Off: the plugin's own input controls the ducker. On: the sidechain input is used instead – route another track to Concert7's sidechain in your DAW, for example to duck a reverb bus whenever the lead vocal sings. Without a sidechain connected, the input is used.</p>
+      </div>
+
+      <h3 class="group" id="smooth">Smooth</h3>
+
+      <div class="panel ctrl">
+        <div class="ctrl-head"><h4>Smooth</h4><span class="tag">Rebuilds IR</span>
+          <dl class="meta"><div><dt>Range</dt><dd>Off (0 %) – 100 %</dd></div><div><dt>Default</dt><dd>Off</dd></div></dl></div>
+        <p>Evens out the late reverb. Frequencies that ring out of the tail – room modes, the metallic tone of a plate, single resonances – are lowered towards their surroundings (by up to 9 dB at 100 %), and bumps or late echoes in the decay are pulled back onto a clean, even decay. Frequencies that ring longer count as much as louder ones, so long ringing is caught as well. The reverb time and the overall level stay the same, and the early reflections are not changed.</p>
+        <p class="tip">Unlike <a href="#modulation">Modulation</a>, Smooth adds no movement – it is the choice for natural spaces whose tail sounds a little coloured or uneven. At Off, the preset sounds exactly as recorded.</p>
       </div>
     </section>
 
